@@ -1,8 +1,6 @@
 package com.example.employee.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Employee {
@@ -18,11 +16,16 @@ public class Employee {
     @Column(nullable = false)
     private  String gender;
 
-    @Column(nullable = false)
+    @Column(nullable = false,insertable = false,updatable = false)
     private  int companyId;
 
     @Column(nullable = false)
     private  int salary;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional=false)
+    @JoinColumn(name = "companyId",referencedColumnName = "id")
+    private Company company;
+
 
     public Employee(){}
     public Employee(int id, String name, int age, String gender, int companyId, int salary) {
@@ -80,5 +83,13 @@ public class Employee {
 
     public void setSalary(int salary) {
         this.salary = salary;
+    }
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
     }
 }
