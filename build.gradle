@@ -1,17 +1,17 @@
-//buildscript {
-//    ext {
-//        springBootVersion = '2.1.4.RELEASE'
-//    }
-//    repositories {
-//        mavenCentral()
-//    }
-//    dependencies {
-//        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+buildscript {
+    ext {
+        springBootVersion = '2.1.4.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
 //        classpath(group: 'org.flywaydb', name: 'flyway-gradle-plugin', version: "5.2.4")
-//    }
-//}
+    }
+}
 plugins {
-    id 'org.springframework.boot' version '2.1.4.RELEASE'
+//    id 'org.springframework.boot' version '2.1.4.RELEASE'
     id "org.flywaydb.flyway" version "5.2.4"
 }
 
@@ -21,7 +21,7 @@ apply plugin: 'maven'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'war'
-apply plugin: 'org.flywaydb.flyway'
+//apply plugin: 'org.flywaydb.flyway'
 
 flyway {
     url = 'jdbc:mysql://localhost:3306/employee_db?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false'
