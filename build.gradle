@@ -3,6 +3,9 @@ buildscript {
         springBootVersion = '2.1.4.RELEASE'
     }
     repositories {
+        maven {
+            url "http://ec2-54-222-235-15.cn-north-1.compute.amazonaws.com.cn:8081/repository/maven-central/"
+        }
         mavenCentral()
     }
     dependencies {
@@ -31,6 +34,9 @@ flyway {
 }
 
 repositories {
+    maven {
+        url "http://ec2-54-222-235-15.cn-north-1.compute.amazonaws.com.cn:8081/repository/maven-central/"
+    }
     mavenCentral()
 }
 
