@@ -1,29 +1,29 @@
-buildscript {
-    ext {
-        springBootVersion = '2.1.4.RELEASE'
-    }
-    repositories {
-        maven {
-            url "http://ec2-54-222-235-15.cn-north-1.compute.amazonaws.com.cn:8081/repository/maven-central/"
-        }
-        mavenCentral()
-    }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-//        classpath(group: 'org.flywaydb', name: 'flyway-gradle-plugin', version: "5.2.4")
-    }
-}
+//buildscript {
+//    ext {
+//        springBootVersion = '2.1.4.RELEASE'
+//    }
+//    repositories {
+////        maven {
+////            url "http://ec2-54-222-235-15.cn-north-1.compute.amazonaws.com.cn:8081/repository/maven-central/"
+////        }
+//        mavenCentral()
+//    }
+//    dependencies {
+//        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+////        classpath(group: 'org.flywaydb', name: 'flyway-gradle-plugin', version: "5.2.4")
+//    }
+//}
 plugins {
-//    id 'org.springframework.boot' version '2.1.4.RELEASE'
+    id 'org.springframework.boot' version '2.1.4.RELEASE'
     id "org.flywaydb.flyway" version "5.2.4"
 }
 
 apply plugin: 'java'
-apply plugin: 'idea'
-apply plugin: 'maven'
-apply plugin: 'org.springframework.boot'
+//apply plugin: 'idea'
+//apply plugin: 'maven'
+//apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
-apply plugin: 'war'
+//apply plugin: 'war'
 //apply plugin: 'org.flywaydb.flyway'
 
 flyway {
@@ -34,9 +34,9 @@ flyway {
 }
 
 repositories {
-    maven {
-        url "http://ec2-54-222-235-15.cn-north-1.compute.amazonaws.com.cn:8081/repository/maven-central/"
-    }
+//    maven {
+//        url "http://ec2-54-222-235-15.cn-north-1.compute.amazonaws.com.cn:8081/repository/maven-central/"
+//    }
     mavenCentral()
 }
 
