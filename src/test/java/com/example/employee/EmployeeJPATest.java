@@ -31,8 +31,8 @@ public class EmployeeJPATest {
     public void setUp() throws Exception {
         //本地启动mysql，创建employee_db数据库
         Flyway flyway = new Flyway();
-        flyway.setDataSource("jdbc:mysql://localhost:3306/employee_db","root","root");
-//        flyway.setDataSource("jdbc:mysql://localhost:3306/employee_db?serverTimezone=GMT%2B8","root","root");
+//        flyway.setDataSource("jdbc:mysql://localhost:3306/employee_db","root","root");
+        flyway.setDataSource("jdbc:mysql://localhost:3306/employee_db?serverTimezone=GMT%2B8","root","root");
         flyway.clean();
         flyway.migrate();
     }
